@@ -54,7 +54,18 @@ echo ""
 echo "Copying ZSH Configs..."
 rsync -ah --info=progress2 $BACKUP_DIR/.zshrc ${HOME}
 rsync -ah --info=progress2 $BACKUP_DIR/.zsh_aliases ${HOME}
-rsync -ah --info=progress2 $BACKUP_DIR/.zsh-plugins ${HOME}
+
+
+echo ""
+echo "${GREENON}###########################${GREENOFF}"
+echo "${GREENON}###     ZSH PLUGINS     ###${GREENOFF}"
+echo "${GREENON}###########################${GREENOFF}"
+echo ""
+
+echo "Cloning ZSH PLUGINS..."
+git clone https://github.com/Aloxaf/fzf-tab.git ${HOME}/.zsh-plugins/fzf-tab
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.zsh-plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.zsh-plugins/zsh-syntax-highlighting
 
 
 echo ""
