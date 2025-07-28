@@ -85,7 +85,6 @@ echo "${GREENON}#################################${GREENOFF}"
 echo ""
 
 echo "Copying KDENLIVE Configs..."
-rsync -ahR --info=progress2 $LOCAL/kdenlive $BACKUP_DIR
 rsync -ahR --info=progress2 $CONFIG/kdenlive-layoutsrc $BACKUP_DIR
 rsync -ahR --info=progress2 $CONFIG/kdenliverc $BACKUP_DIR
 
