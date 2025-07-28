@@ -1,0 +1,3 @@
+<profiles version="1">
+ <profile args="ab=%audiobitrate+'k' acodec=aac f=mp4 hwaccel=vaapi hwaccel_device=renderD129 hwaccel_output_format=vaapi vb=%bitrate+'k' vcodec=h264_vaapi" category="Hardware Accelerated (experimental)" defaultaudiobitrate="192" defaultaudioquality="0" defaultbitrate="30000" defaultquality="0" extension="mp4" name="MAIN - VAAPI AMD H264"/>
+</profiles>

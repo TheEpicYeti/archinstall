@@ -1,0 +1,130 @@
+#!/bin/bash
+
+####################################
+#####     COLOUR VARIABLES     #####
+####################################
+
+YELLOWON=$(tput bold)$(tput setaf 3)
+YELLOWOFF=$(tput sgr0)
+
+GREENON=$(tput bold)$(tput setaf 2)
+GREENOFF=$(tput sgr0)
+
+
+echo ""
+echo ""
+echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${YELLOWOFF}"
+echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${YELLOWOFF}"
+echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${YELLOWOFF}"
+echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${YELLOWOFF}"
+echo ""
+echo ""
+
+
+BACKUP_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/dotfiles"
+
+echo ""
+echo "${GREENON}###############################${GREENOFF}"
+echo "${GREENON}###     .CONFIG CONFIGS     ###${GREENOFF}"
+echo "${GREENON}###############################${GREENOFF}"
+echo ""
+
+echo "Copying .config Configs..."
+rsync -ah --info=progress2 $BACKUP_DIR/.config ${HOME}
+
+
+echo ""
+echo "${GREENON}#############################${GREENOFF}"
+echo "${GREENON}###     .LOCAL CONFIGS    ###${GREENOFF}"
+echo "${GREENON}#############################${GREENOFF}"
+echo ""
+
+echo "Copying .local Configs..."
+rsync -ah --info=progress2 $BACKUP_DIR/.local ${HOME}
+
+
+echo ""
+echo "${GREENON}############################${GREENOFF}"
+echo "${GREENON}###     HOME CONFIGS     ###${GREENOFF}"
+echo "${GREENON}############################${GREENOFF}"
+echo ""
+
+echo "Copying ZSH Configs..."
+rsync -ah --info=progress2 $BACKUP_DIR/.zshrc ${HOME}
+rsync -ah --info=progress2 $BACKUP_DIR/.zsh_aliases ${HOME}
+rsync -ah --info=progress2 $BACKUP_DIR/.zsh-plugins ${HOME}
+
+
+echo ""
+echo "${GREENON}############################${GREENOFF}"
+echo "${GREENON}###     ROOT CONFIGS     ###${GREENOFF}"
+echo "${GREENON}############################${GREENOFF}"
+echo ""
+
+echo "Copying PACMAN Config..."
+sudo rsync -h --info=progress2 $BACKUP_DIR/pacman.conf /etc/
+
+echo "Copying SYSCTL Config..."
+sudo rsync -h --info=progress2 $BACKUP_DIR/99-sysctl.conf /etc/sysctl.d/
+
+
+echo ""
+echo "${GREENON}###############################################${GREENOFF}"
+echo "${GREENON}###    FLATPAK PERMS & GTK THEME FIXES      ###${GREENOFF}"
+echo "${GREENON}###############################################${GREENOFF}"
+echo ""
+
+echo "Copying GTK Themes..."
+cp -f ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-3.0/gtk.css ${HOME}/.config/gtk-3.0/
+cp -f ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-4.0/gtk.css ${HOME}/.config/gtk-4.0/
+
+echo "Applying Catppucin Folder Theme..."
+papirus-folders -C cat-mocha-mauve --theme Papirus-Dark
+
+echo "Applying FLATPAK Overrides..."
+flatpak --user override --filesystem=xdg-data/themes:ro
+flatpak --user override --filesystem=xdg-data/icons:ro
+flatpak --user override --filesystem=xdg-data/fonts:ro
+flatpak --user override --filesystem=xdg-config/gtk-4.0:ro
+flatpak --user override --filesystem=xdg-config/gtk-3.0:ro
+flatpak --user override --env=ICON_THEME=Papirus-Dark
+flatpak --user override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
+
+
+echo ""
+echo "${GREENON}######################################${GREENOFF}"
+echo "${GREENON}###    ENABLE SYSTEM SERVICES      ###${GREENOFF}"
+echo "${GREENON}######################################${GREENOFF}"
+echo ""
+
+echo "Enabling CRON Service..."
+sudo systemctl enable --now cronie.service
+
+echo "Enabling PACCACHE Service..."
+sudo systemctl enable --now paccache.timer
+
+echo "Enabling LACT Service..."
+sudo systemctl enable --now lactd.service
+
+echo "Enabling FSTRIM Service..."
+sudo systemctl enable --now fstrim.timer
+
+echo "Enabling SYNCTHING Service..."
+sudo systemctl enable --now syncthing@cain.service
+
+
+echo ""
+echo ""
+echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${YELLOWOFF}"
+echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${YELLOWOFF}"
+echo ""
+echo ""
+
+read -p "Press Enter to exit..."
+exit 1

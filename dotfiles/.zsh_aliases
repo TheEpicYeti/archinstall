@@ -1,0 +1,138 @@
+
+#############################################
+######   GENERAL ALIASES & FUNCTIONS   ######
+#############################################
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+
+alias ls="lsd -a"
+alias ll="lsd -al"
+
+fh() 
+  {
+  local cmd
+  cmd=$(history | fzf --tac --no-sort --height=50% --reverse | sed 's/^[ ]*[0-9]*[ ]*//')
+  if [[ -n "$cmd" ]]; then
+    eval "$cmd"
+  fi
+  }
+
+alias sshomv="ssh cain@192.168.50.200"
+alias sshnas="ssh cain@192.168.50.200"
+alias sshdeck="ssh deck@192.168.50.110" 
+
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"
+
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+
+# LOCATE
+locate()
+  { 
+  sudo updatedb
+  plocate -i "$1" 
+  }
+
+# REPLACE find WITH fd
+alias find="fd"
+compdef _fd find
+
+fdf() 
+  {
+  fd -H "$1" --type f
+  }
+
+fdd() 
+  { 
+  fd -H "$1" --type d
+  }
+
+
+###################################################
+######   ARCH SPECIFIC ALIASES & FUNCTIONS   ######
+###################################################
+
+alias install="sudo pacman -S"
+compdef _pacman install
+alias remove="sudo pacman -Rns"
+compdef _pacman remove
+
+yayin()
+  {
+  yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=:60% | xargs -ro yay -S
+  }
+
+alias yayup="yay && flatpak update"
+
+alias removeorphans="pacman -Qtdq | sudo pacman -Rns -"
+alias cleancache="yay -Scc"
+
+
+# SEARCH INSTALLED PACKAGES
+searchin() 
+  {
+  pacman -Qq | fzf --multi --preview 'pacman -Qil {}' --preview-window=:60% | xargs -ro pacman -Qil | cat
+  }
+
+
+# UPDATE MIRRORS
+update-mirrors() 
+  {
+  sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
+  curl -s "https://archlinux.org/mirrorlist/?country=FR&country=DE&country=GB&protocol=https&ip_version=4&use_mirror_status=on" | \
+    sed -e 's/^#Server/Server/' -e '/^#/d' | \
+    rankmirrors -n 20 - | \
+    sudo tee /etc/pacman.d/mirrorlist
+  }
+
+
+##################################################
+######   ISO MOUNTING ALIASES & FUNCTIONS   ######
+##################################################
+
+# MOUNT ISO SCRIPT (mountiso path/to/iso.iso)
+mountiso() 
+  {
+  if [ "`mount | grep /mnt/iso`" ]; then
+    echo "/mnt/iso is already in use."
+    return
+  fi
+  if [ ! "$1" ]; then
+    echo "Missing iso image argument."
+    return
+  fi
+  if [ ! -f $1 ]; then
+    echo "$1: iso image not found."
+    return
+  fi
+
+  sudo mount -o loop,ro $1 /mnt/iso
+  echo "iso mounted successfully."
+
+  dolphin /mnt/iso/ &
+  disown
+  
+  exit 0
+  }
+
+# UNMOUNT ISO FROM /mnt/iso
+alias umountiso="sudo umount /mnt/iso"
+
+
+################################
+######   PYTHON ALIASES   ######
+################################
+
+alias pipin="/home/cain/.venv/bin/pip install $1"
+alias pyrun="/home/cain/.venv/bin/python $1"
+
+
+######################################
+######   PROTONTRICKS ALIASES   ######
+######################################
+
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'

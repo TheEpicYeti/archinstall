@@ -1,0 +1,39 @@
+format = """
+[   ](bg:#FFFFFF fg:#313244)\
+[🭬](bg:#EA76CB fg:#FFFFFF)\
+$directory\
+[🭬](#EA76CB) \
+"""
+
+right_format = """
+[🭮](#8839EF)\
+$status\
+[🭮](bg:#8839EF fg:#FFFFFF)\
+$time\
+"""
+
+[directory]
+format = "[ $path ](bg:#EA76CB fg:#313244)"
+truncation_length = 3
+truncation_symbol = ".../"
+
+[directory.substitutions]
+"~" = " ~"
+"Desktop" = "  Desktop"
+"Documents" = "󰈙 Documents"
+"Downloads" = "  Downloads"
+"Music" = "  Music"
+"Pictures" = "  Pictures"
+"Games" = "󰊖  Games"
+
+[status]
+symbol = '[  ](bg:#8839EF fg:#F38BA8)'
+success_symbol = '[  ](bg:#8839EF fg:#A6E3A1)'
+format = '$symbol'
+map_symbol = false
+disabled = false
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[ $time ](bg:#FFFFFF fg:#313244)'
