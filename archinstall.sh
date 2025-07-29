@@ -77,7 +77,6 @@ bluedevil \
 breeze-gtk \
 drkonqi \
 ffmpegthumbs \
-flatpak-kcm \
 kactivitymanagerd \
 kcron \
 kde-cli-tools \
@@ -256,6 +255,7 @@ echo ""
 
 # FLATPAK PACKAGES
 flatpak install -y flathub \
+com.github.tchx84.Flatseal \
 com.vysp3r.ProtonPlus \
 com.github.Matoking.protontricks \
 com.stremio.Stremio \

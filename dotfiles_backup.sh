@@ -61,6 +61,9 @@ rsync -ahR --info=progress2 $CONFIG/fastfetch $BACKUP_DIR
 echo "Copying LSD Configs..."
 rsync -ahR --info=progress2 $CONFIG/lsd $BACKUP_DIR
 
+echo "Copying BAT Configs..."
+rsync -ahR --info=progress2 $CONFIG/bat $BACKUP_DIR
+
 
 echo ""
 echo "${GREENON}###########################${GREENOFF}"
