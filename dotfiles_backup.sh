@@ -98,6 +98,11 @@ echo "${GREENON}#####      THEME CONFIGS      #####${GREENOFF}"
 echo "${GREENON}###################################${GREENOFF}"
 echo ""
 
+echo "Copying GTK Themes..."
+rsync -ahR --info=progress2 $LOCAL/themes/Colloid-Purple-Dark-Catppuccin $BACKUP_DIR
+rsync -ahR --info=progress2 $LOCAL/themes/Colloid-Purple-Dark-Catppuccin-hdpi $BACKUP_DIR
+rsync -ahR --info=progress2 $LOCAL/themes/Colloid-Purple-Dark-Catppuccin-xhdpi $BACKUP_DIR
+
 echo "Copying PLASMA Colour Schemes..."
 rsync -ahR --info=progress2 $LOCAL/color-schemes $BACKUP_DIR
 rsync -ahR --info=progress2 $LOCAL/color-schemes $BACKUP_DIR
