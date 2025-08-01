@@ -40,9 +40,9 @@ mkdir -p "$BACKUP_DIR"
 
 
 echo ""
-echo "${GREENON}######################################${GREENOFF}"
-echo "${GREENON}###     ZSH & TERMINAL CONFIGS     ###${GREENOFF}"
-echo "${GREENON}######################################${GREENOFF}"
+echo "${GREENON}▄▖▄▖▖▖  ▗   ▄▖▄▖▄▖▖  ▖▄▖▖ ▖▄▖▖   ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▗▘▚ ▙▌  ▚▘  ▐ ▙▖▙▘▛▖▞▌▐ ▛▖▌▌▌▌   ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▙▖▄▌▌▌  ▚▌  ▐ ▙▖▌▌▌▝ ▌▟▖▌▝▌▛▌▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying ZSH Configs..."
@@ -66,9 +66,9 @@ rsync -ahR --info=progress2 $CONFIG/bat $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}###########################${GREENOFF}"
-echo "${GREENON}###     KDE CONFIGS     ###${GREENOFF}"
-echo "${GREENON}###########################${GREENOFF}"
+echo "${GREENON}▖▖▄ ▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▙▘▌▌▙▖  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▌▌▙▘▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying KDE Configs..."
@@ -82,9 +82,9 @@ rsync -ahR --info=progress2 $CONFIG/krunnerrc $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}#################################${GREENOFF}"
-echo "${GREENON}###     KDEN LIVE CONFIGS     ###${GREENOFF}"
-echo "${GREENON}#################################${GREENOFF}"
+echo "${GREENON}▖▖▄ ▄▖▖ ▖▖ ▄▖▖▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▙▘▌▌▙▖▛▖▌▌ ▐ ▌▌▙▖  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▌▌▙▘▙▖▌▝▌▙▖▟▖▚▘▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying KDENLIVE Configs..."
@@ -93,9 +93,9 @@ rsync -ahR --info=progress2 $CONFIG/kdenliverc $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}#############################${GREENOFF}"
-echo "${GREENON}###     THEME CONFIGS     ###${GREENOFF}"
-echo "${GREENON}#############################${GREENOFF}"
+echo "${GREENON}▄▖▖▖▄▖▖  ▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▐ ▙▌▙▖▛▖▞▌▙▖  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▐ ▌▌▙▖▌▝ ▌▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying PLASMA Colour Schemes..."
@@ -107,9 +107,9 @@ rsync -ahR --info=progress2 $LOCAL/aurorae $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}############################${GREENOFF}"
-echo "${GREENON}###     MISC CONFIGS     ###${GREENOFF}"
-echo "${GREENON}############################${GREENOFF}"
+echo "${GREENON}▖  ▖▄▖▄▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▛▖▞▌▐ ▚ ▌   ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▌▝ ▌▟▖▄▌▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying MANGOHUD Config..."
@@ -130,9 +130,9 @@ rsync -ahR --info=progress2 $CONFIG/btop $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}#############################${GREENOFF}"
-echo "${GREENON}###     FONTS & ICONS     ###${GREENOFF}"
-echo "${GREENON}#############################${GREENOFF}"
+echo "${GREENON}▄▖▄▖▖ ▖▄▖▄▖  ▗   ▄▖▄▖▄▖▖ ▖▄▖${GREENOFF}"
+echo "${GREENON}▙▖▌▌▛▖▌▐ ▚   ▚▘  ▐ ▌ ▌▌▛▖▌▚ ${GREENOFF}"
+echo "${GREENON}▌ ▙▌▌▝▌▐ ▄▌  ▚▌  ▟▖▙▖▙▌▌▝▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying FONTS..."
@@ -142,9 +142,9 @@ rsync -ahR --info=progress2 $LOCAL/icons $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}#############################${GREENOFF}"
-echo "${GREENON}###     AUDIO CONFIGS     ###${GREENOFF}"
-echo "${GREENON}#############################${GREENOFF}"
+echo "${GREENON}▄▖▖▖▄ ▄▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▌▌▌▌▌▌▐ ▌▌  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▛▌▙▌▙▘▟▖▙▌  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying PIPEWIRE Configs..."
@@ -165,9 +165,9 @@ echo ""
 
 
 echo ""
-echo "${GREENON}############################${GREENOFF}"
-echo "${GREENON}###     ARCH CONFIGS     ###${GREENOFF}"
-echo "${GREENON}############################${GREENOFF}"
+echo "${GREENON}▄▖▄▖▄▖▖▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▌▌▙▘▌ ▙▌  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▛▌▌▌▙▖▌▌  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying PACMAN Config..."
@@ -175,9 +175,9 @@ sudo rsync -ah --info=progress2 /etc/pacman.conf $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}##############################${GREENOFF}"
-echo "${GREENON}###     SYSTEM CONFIGS     ###${GREENOFF}"
-echo "${GREENON}##############################${GREENOFF}"
+echo "${GREENON}▄▖▖▖▄▖▄▖▄▖▖  ▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▚ ▌▌▚ ▐ ▙▖▛▖▞▌  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
+echo "${GREENON}▄▌▐ ▄▌▐ ▙▖▌▝ ▌  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
 echo ""
 
 echo "Copying SYSCTL Config..."

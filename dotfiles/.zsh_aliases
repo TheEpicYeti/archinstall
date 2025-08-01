@@ -29,6 +29,10 @@ alias poweroff="sudo poweroff"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 
+####################################
+######   FIND & FZF ALIASES   ######
+####################################
+
 # REPLACE find WITH fd
 alias find="fd"
 compdef _fd find
@@ -151,3 +155,10 @@ alias pyrun="/home/cain/.venv/bin/python $1"
 
 alias protontricks='flatpak run com.github.Matoking.protontricks'
 alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
+
+
+##############################
+######   MISC ALIASES   ######
+##############################
+
+alias windowdetails="qdbus org.kde.KWin /KWin org.kde.KWin.queryWindowInfo"

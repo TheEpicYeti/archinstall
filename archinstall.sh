@@ -1,50 +1,50 @@
 #!/bin/bash
+
+####################################
+#####     COLOUR VARIABLES     #####
+####################################
+
+YELLOWON=$(tput bold)$(tput setaf 3)
+YELLOWOFF=$(tput sgr0)
+
+GREENON=$(tput bold)$(tput setaf 2)
+GREENOFF=$(tput sgr0)
+
 echo ""
-echo "▗▖ ▗▖▗▄▄▖ ▗▄▄▄   ▗▄▖▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖ ▗▄▄▖     ▗▄▄▖▗▖  ▗▖▗▄▄▖▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖"
-echo "▐▌ ▐▌▐▌ ▐▌▐▌  █ ▐▌ ▐▌ █    █  ▐▛▚▖▐▌▐▌       ▐▌    ▝▚▞▘▐▌     █  ▐▌   ▐▛▚▞▜▌"
-echo "▐▌ ▐▌▐▛▀▘ ▐▌  █ ▐▛▀▜▌ █    █  ▐▌ ▝▜▌▐▌▝▜▌     ▝▀▚▖  ▐▌  ▝▀▚▖  █  ▐▛▀▀▘▐▌  ▐▌"
-echo "▝▚▄▞▘▐▌   ▐▙▄▄▀ ▐▌ ▐▌ █  ▗▄█▄▖▐▌  ▐▌▝▚▄▞▘    ▗▄▄▞▘  ▐▌ ▗▄▄▞▘  █  ▐▙▄▄▖▐▌  ▐▌"
+echo ""
+echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${YELLOWOFF}"
+echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${YELLOWOFF}"
+echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${YELLOWOFF}"
+echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${YELLOWOFF}"
+echo ""
+echo ""
+
+echo ""
+echo "${GREENON}▖▖▄▖▄ ▄▖▄▖▄▖▖ ▖▄▖  ▄▖▖▖▄▖▄▖▄▖▖  ▖${GREENOFF}"
+echo "${GREENON}▌▌▙▌▌▌▌▌▐ ▐ ▛▖▌▌   ▚ ▌▌▚ ▐ ▙▖▛▖▞▌${GREENOFF}"
+echo "${GREENON}▙▌▌ ▙▘▛▌▐ ▟▖▌▝▌▙▌  ▄▌▐ ▄▌▐ ▙▖▌▝ ▌${GREENOFF}"
 echo ""
 
 sudo -v 
 sudo pacman -Syu
 
-
 echo ""
-echo "▗▄▄▄   ▗▄▖ ▗▖  ▗▖▗▄▄▄▖"
-echo "▐▌  █ ▐▌ ▐▌▐▛▚▖▐▌▐▌   "
-echo "▐▌  █ ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘"
-echo "▐▙▄▄▀ ▝▚▄▞▘▐▌  ▐▌▐▙▄▄▖"
+echo "${GREENON}▄▖▖ ▖▄▖▄▖▄▖▖ ▖ ▄▖▖ ▖▄▖  ▖▖▄▖▖▖${GREENOFF}"
+echo "${GREENON}▐ ▛▖▌▚ ▐ ▌▌▌ ▌ ▐ ▛▖▌▌   ▌▌▌▌▌▌${GREENOFF}"
+echo "${GREENON}▟▖▌▝▌▄▌▐ ▛▌▙▖▙▖▟▖▌▝▌▙▌  ▐ ▛▌▐ ${GREENOFF}"
 echo ""
-
-
-echo ""
-echo "▗▄▄▄▖▗▖  ▗▖ ▗▄▄▖▗▄▄▄▖▗▄▖ ▗▖   ▗▖   ▗▄▄▄▖▗▖  ▗▖ ▗▄▄▖    ▗▖  ▗▖▗▄▖▗▖  ▗▖"
-echo "  █  ▐▛▚▖▐▌▐▌     █ ▐▌ ▐▌▐▌   ▐▌     █  ▐▛▚▖▐▌▐▌        ▝▚▞▘▐▌ ▐▌▝▚▞▘ "
-echo "  █  ▐▌ ▝▜▌ ▝▀▚▖  █ ▐▛▀▜▌▐▌   ▐▌     █  ▐▌ ▝▜▌▐▌▝▜▌      ▐▌ ▐▛▀▜▌ ▐▌  "
-echo "▗▄█▄▖▐▌  ▐▌▗▄▄▞▘  █ ▐▌ ▐▌▐▙▄▄▖▐▙▄▄▖▗▄█▄▖▐▌  ▐▌▝▚▄▞▘      ▐▌ ▐▌ ▐▌ ▐▌  "
-echo ""                                                                      
-
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 cd ..
 rm -rf yay
 
 echo ""
-echo "▗▄▄▄   ▗▄▖ ▗▖  ▗▖▗▄▄▄▖"
-echo "▐▌  █ ▐▌ ▐▌▐▛▚▖▐▌▐▌   "
-echo "▐▌  █ ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘"
-echo "▐▙▄▄▀ ▝▚▄▞▘▐▌  ▐▌▐▙▄▄▖"
+echo "${GREENON}▄▖▖ ▖▄▖▄▖▄▖▄▖▖   ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▐ ▛▖▌▐ ▐ ▐ ▌▌▌   ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ ${GREENOFF}"
+echo "${GREENON}▟▖▌▝▌▟▖▐ ▟▖▛▌▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌${GREENOFF}"
 echo ""
-
-
-echo ""
-echo "▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖▗▄▄▄▖▗▄▄▄▖ ▗▄▖ ▗▖       ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖"
-echo "  █  ▐▛▚▖▐▌  █    █    █  ▐▌ ▐▌▐▌       ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   "
-echo "  █  ▐▌ ▝▜▌  █    █    █  ▐▛▀▜▌▐▌       ▐▛▀▘ ▐▛▀▜▌▐▌   ▐▛▚▖ ▐▛▀▜▌▐▌▝▜▌▐▛▀▀▘ ▝▀▚▖"
-echo "▗▄█▄▖▐▌  ▐▌▗▄█▄▖  █  ▗▄█▄▖▐▌ ▐▌▐▙▄▄▖    ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘"
-echo ""
-
 
 sudo pacman -S --needed \
 
@@ -54,22 +54,11 @@ noto-fonts \
 noto-fonts-emoji \
 cronie
 
-
 echo ""
-echo "▗▄▄▄   ▗▄▖ ▗▖  ▗▖▗▄▄▄▖"
-echo "▐▌  █ ▐▌ ▐▌▐▛▚▖▐▌▐▌   "
-echo "▐▌  █ ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘"
-echo "▐▙▄▄▀ ▝▚▄▞▘▐▌  ▐▌▐▙▄▄▖"
+echo "${GREENON}▖▖▄ ▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▙▘▌▌▙▖  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ ${GREENOFF}"
+echo "${GREENON}▌▌▙▘▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌${GREENOFF}"
 echo ""
-
-
-echo ""
-echo "▗▖ ▗▖▗▄▄▄  ▗▄▄▄▖    ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖"
-echo "▐▌▗▞▘▐▌  █ ▐▌       ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   "
-echo "▐▛▚▖ ▐▌  █ ▐▛▀▀▘    ▐▛▀▘ ▐▛▀▜▌▐▌   ▐▛▚▖ ▐▛▀▜▌▐▌▝▜▌▐▛▀▀▘ ▝▀▚▖"
-echo "▐▌ ▐▌▐▙▄▄▀ ▐▙▄▄▖    ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘"
-echo ""
-
 
 sudo pacman -S --needed \
 ark \
@@ -117,25 +106,16 @@ print-manager \
 sddm-kcm \
 spectacle 
 
-
 echo ""
-echo "▗▄▄▄   ▗▄▖ ▗▖  ▗▖▗▄▄▄▖"
-echo "▐▌  █ ▐▌ ▐▌▐▛▚▖▐▌▐▌   "
-echo "▐▌  █ ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘"
-echo "▐▙▄▄▀ ▝▚▄▞▘▐▌  ▐▌▐▙▄▄▖"
+echo "${GREENON}▄ ▄▖▄▖▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▙▘▌▌▚ ▙▖  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ ${GREENOFF}"
+echo "${GREENON}▙▘▛▌▄▌▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌${GREENOFF}"
 echo ""
-
-
-echo ""
-echo "▗▄▄▖  ▗▄▖  ▗▄▄▖▗▄▄▄▖    ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖"
-echo "▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌       ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   "
-echo "▐▛▀▚▖▐▛▀▜▌ ▝▀▚▖▐▛▀▀▘    ▐▛▀▘ ▐▛▀▜▌▐▌   ▐▛▚▖ ▐▛▀▜▌▐▌▝▜▌▐▛▀▀▘ ▝▀▚▖"
-echo "▐▙▄▞▘▐▌ ▐▌▗▄▄▞▘▐▙▄▄▖    ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘"
-echo ""
-
 
 sudo pacman -S --needed \
 7zip \
+adobe-source-han-sans-otc-fonts \
+adobe-source-han-serif-otc-fonts \
 alsa-lib \
 alsa-oss \
 alsa-plugins \
@@ -188,6 +168,7 @@ steam \
 syncthing \
 tealdeer \
 thefuck \
+ttf-roboto \
 ufw \
 umu-launcher \
 unrar \
@@ -207,14 +188,11 @@ yabridgectl \
 yad \
 zsh
 
-
 echo ""
-echo " ▗▄▖ ▗▖ ▗▖▗▄▄▖     ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖"
-echo "▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌    ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   "
-echo "▐▛▀▜▌▐▌ ▐▌▐▛▀▚▖    ▐▛▀▘ ▐▛▀▜▌▐▌   ▐▛▚▖ ▐▛▀▜▌▐▌▝▜▌▐▛▀▀▘ ▝▀▚▖"
-echo "▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌    ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘"
-echo ""                                                           
-
+echo "${GREENON}▄▖▖▖▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▌▌▌▌▙▘  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ ${GREENOFF}"
+echo "${GREENON}▛▌▙▌▌▌  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌${GREENOFF}"
+echo ""
 
 yay -S --needed \
 aic94xx-firmware \
@@ -227,21 +205,10 @@ upd72020x-fw \
 visual-studio-code-bin \
 wd719x-firmware
 
-sudo systemctl enable --now sddm.service
-
 echo ""
-echo "▗▄▄▄   ▗▄▖ ▗▖  ▗▖▗▄▄▄▖"
-echo "▐▌  █ ▐▌ ▐▌▐▛▚▖▐▌▐▌   "
-echo "▐▌  █ ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘"
-echo "▐▙▄▄▀ ▝▚▄▞▘▐▌  ▐▌▐▙▄▄▖"
-echo ""
-
-
-echo ""
-echo "▗▄▄▄▖▗▖    ▗▄▖▗▄▄▄▖▗▄▄▖  ▗▄▖ ▗▖ ▗▖    ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖"
-echo "▐▌   ▐▌   ▐▌ ▐▌ █  ▐▌ ▐▌▐▌ ▐▌▐▌▗▞▘    ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   "
-echo "▐▛▀▀▘▐▌   ▐▛▀▜▌ █  ▐▛▀▘ ▐▛▀▜▌▐▛▚▖     ▐▛▀▘ ▐▛▀▜▌▐▌   ▐▛▚▖ ▐▛▀▜▌▐▌▝▜▌▐▛▀▀▘ ▝▀▚▖"
-echo "▐▌   ▐▙▄▄▖▐▌ ▐▌ █  ▐▌   ▐▌ ▐▌▐▌ ▐▌    ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘"
+echo "${GREENON}▄▖▖ ▄▖▄▖▄▖▄▖▖▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
+echo "${GREENON}▙▖▌ ▌▌▐ ▙▌▌▌▙▘  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ ${GREENOFF}"
+echo "${GREENON}▌ ▙▖▛▌▐ ▌ ▛▌▌▌  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌${GREENOFF}"
 echo ""
 
 echo ""
@@ -251,6 +218,7 @@ echo ""
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo ""
+echo "DONE"
 echo ""
 
 # FLATPAK PACKAGES
@@ -265,24 +233,30 @@ net.lutris.Lutris \
 com.obsproject.Studio \
 com.core447.StreamController 
 
+echo ""
+echo "${GREENON}▄▖▖ ▖▄▖▄ ▖ ▄▖  ▄▖▄ ▄ ▖  ▖${GREENOFF}"
+echo "${GREENON}▙▖▛▖▌▌▌▙▘▌ ▙▖  ▚ ▌▌▌▌▛▖▞▌${GREENOFF}"
+echo "${GREENON}▙▖▌▝▌▛▌▙▘▙▖▙▖  ▄▌▙▘▙▘▌▝ ▌${GREENOFF}"
+echo ""
+
+sudo systemctl enable sddm.service
 
 echo ""
-echo " ▗▄▄▖▗▄▄▄▖▗▄▄▄▖    ▗▄▄▄▄▖ ▗▄▄▖▗▖ ▗▖"
-echo "▐▌   ▐▌     █         ▗▞▘▐▌   ▐▌ ▐▌"
-echo " ▝▀▚▖▐▛▀▀▘  █       ▗▞▘   ▝▀▚▖▐▛▀▜▌"
-echo "▗▄▄▞▘▐▙▄▄▖  █      ▐▙▄▄▄▖▗▄▄▞▘▐▌ ▐▌"
+echo "${GREENON}▄▖▄▖▄▖  ▄▖▖▖▄▖▖ ▖ ${GREENOFF}"
+echo "${GREENON}▚ ▙▖▐   ▚ ▙▌▙▖▌ ▌ ${GREENOFF}"
+echo "${GREENON}▄▌▙▖▐   ▄▌▌▌▙▖▙▖▙▖${GREENOFF}"
 echo ""
 
 chsh -s /usr/bin/zsh
 
 echo ""
 echo ""
-echo "███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ "
-echo "██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗"
-echo "█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║"
-echo "██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║"
-echo "██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝"
-echo "╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ "
+echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${YELLOWOFF}"
+echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${YELLOWOFF}"
 echo ""
 echo ""
 
@@ -309,4 +283,3 @@ while [ $seconds -gt 0 ]; do
 done
 
 echo -e "\nRebooting now..."
-sudo reboot
