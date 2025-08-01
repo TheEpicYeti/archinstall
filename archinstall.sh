@@ -51,7 +51,8 @@ vulkan-radeon \
 lib32-vulkan-radeon \
 noto-fonts \
 noto-fonts-emoji \
-cronie
+cronie \
+qt6-multimedia-ffmpeg
 
 echo ""
 echo "${GREENON}▖▖▄ ▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
