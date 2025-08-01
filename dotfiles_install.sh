@@ -26,9 +26,9 @@ echo ""
 BACKUP_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/dotfiles"
 
 echo ""
-echo "${GREENON}  ▄▖▄▖▖ ▖▄▖▄▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}  ▌ ▌▌▛▖▌▙▖▐ ▌   ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
-echo "${GREENON}▗ ▙▖▙▌▌▝▌▌ ▟▖▙▌  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####      .CONFIG CONFIGS      #####${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
 echo ""
 
 echo "Copying .config Configs..."
@@ -36,9 +36,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.config ${HOME}
 
 
 echo ""
-echo "${GREENON}  ▖ ▄▖▄▖▄▖▖   ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}  ▌ ▌▌▌ ▌▌▌   ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
-echo "${GREENON}▗ ▙▖▙▌▙▖▛▌▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####      .LOCAL CONFIGS      #####${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
 echo ""
 
 echo "Copying .local Configs..."
@@ -46,9 +46,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.local ${HOME}
 
 
 echo ""
-echo "${GREENON}▖▖▄▖▖  ▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}▙▌▌▌▛▖▞▌▙▖  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
-echo "${GREENON}▌▌▙▌▌▝ ▌▙▖  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
+echo "${GREENON}##################################${GREENOFF}"
+echo "${GREENON}#####      HOME CONFIGS      #####${GREENOFF}"
+echo "${GREENON}##################################${GREENOFF}"
 echo ""
 
 echo "Copying ZSH Configs..."
@@ -57,9 +57,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.zsh_aliases ${HOME}
 
 
 echo ""
-echo "${GREENON}▄▖▄▖▖▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}▗▘▚ ▙▌  ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
-echo "${GREENON}▙▖▄▌▌▌  ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
+echo "${GREENON}#################################${GREENOFF}"
+echo "${GREENON}#####      ZSH CONFIGS      #####${GREENOFF}"
+echo "${GREENON}#################################${GREENOFF}"
 echo ""
 
 echo "Cloning ZSH PLUGINS..."
@@ -69,9 +69,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.zsh-
 
 
 echo ""
-echo "${GREENON}▄▖▄▖▄▖▄▖  ▄▖▄▖▖ ▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}▙▘▌▌▌▌▐   ▌ ▌▌▛▖▌▙▖▐ ▌ ▚ ${GREENOFF}"
-echo "${GREENON}▌▌▙▌▙▌▐   ▙▖▙▌▌▝▌▌ ▟▖▙▌▄▌${GREENOFF}"
+echo "${GREENON}##################################${GREENOFF}"
+echo "${GREENON}#####      ROOT CONFIGS      #####${GREENOFF}"
+echo "${GREENON}##################################${GREENOFF}"
 echo ""
 
 echo "Copying PACMAN Config..."
@@ -82,9 +82,9 @@ sudo rsync -h --info=progress2 $BACKUP_DIR/99-sysctl.conf /etc/sysctl.d/
 
 
 echo ""
-echo "${GREENON}▄▖▖ ▄▖▄▖▄▖▄▖▖▖  ▄▖▄▖▄▖▖  ▖▄▖  ▗   ▄▖▄▖▖▖  ▄▖▄▖▖▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}▙▖▌ ▌▌▐ ▙▌▌▌▙▘  ▙▌▙▖▙▘▛▖▞▌▚   ▚▘  ▌ ▐ ▙▘  ▙▖▐ ▚▘▙▖▚ ${GREENOFF}"
-echo "${GREENON}▌ ▙▖▛▌▐ ▌ ▛▌▌▌  ▌ ▙▖▌▌▌▝ ▌▄▌  ▚▌  ▙▌▐ ▌▌  ▌ ▟▖▌▌▙▖▄▌${GREENOFF}"
+echo "${GREENON}#################################################${GREENOFF}"
+echo "${GREENON}#####      FLATPAK PERMS & GTK CONFIGS      #####${GREENOFF}"
+echo "${GREENON}#################################################${GREENOFF}"
 echo ""
 
 echo "Copying GTK Themes..."
@@ -105,9 +105,9 @@ flatpak --user override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
 
 
 echo ""
-echo "${GREENON}▄▖▖ ▖▄▖▄ ▖ ▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖${GREENOFF}"
-echo "${GREENON}▙▖▛▖▌▌▌▙▘▌ ▙▖  ▚ ▙▖▙▘▌▌▐ ▌ ▙▖▚ ${GREENOFF}"
-echo "${GREENON}▙▖▌▝▌▛▌▙▘▙▖▙▖  ▄▌▙▖▌▌▚▘▟▖▙▖▙▖▄▌${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####      ENABLE SERVICES      #####${GREENOFF}"
+echo "${GREENON}#####################################${GREENOFF}"
 echo ""
 
 echo "Enabling CRON Service..."

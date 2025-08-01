@@ -1,29 +1,40 @@
 #!/bin/bash
 
+####################################
+#####     COLOUR VARIABLES     #####
+####################################
+
+YELLOWON=$(tput bold)$(tput setaf 3)
+YELLOWOFF=$(tput sgr0)
+
+GREENON=$(tput bold)$(tput setaf 2)
+GREENOFF=$(tput sgr0)
+
+
 echo ""
 echo ""
-echo "██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ "
-echo "██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ "
-echo "██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗"
-echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║"
-echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝"
-echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ "
+echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${YELLOWOFF}"
+echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${YELLOWOFF}"
+echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${YELLOWOFF}"
+echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${YELLOWOFF}"
 echo ""
 echo ""
 
 echo ""
-echo "▖▖▄▖▄ ▄▖▄▖▄▖▖ ▖▄▖  ▄▖▖▖▄▖▄▖▄▖▖  ▖"
-echo "▌▌▙▌▌▌▌▌▐ ▐ ▛▖▌▌   ▚ ▌▌▚ ▐ ▙▖▛▖▞▌"
-echo "▙▌▌ ▙▘▛▌▐ ▟▖▌▝▌▙▌  ▄▌▐ ▄▌▐ ▙▖▌▝ ▌"
+echo "#${GREENON}#####################################${GREENOFF}"
+echo "#${GREENON}#####      INITIAL UPDATE      ######${GREENOFF}"
+echo "#${GREENON}#####################################${GREENOFF}"
 echo ""
 
 sudo -v 
 sudo pacman -Syu
 
 echo ""
-echo "▄▖▖ ▖▄▖▄▖▄▖▖ ▖ ▄▖▖ ▖▄▖  ▖▖▄▖▖▖"
-echo "▐ ▛▖▌▚ ▐ ▌▌▌ ▌ ▐ ▛▖▌▌   ▌▌▌▌▌▌"
-echo "▟▖▌▝▌▄▌▐ ▛▌▙▖▙▖▟▖▌▝▌▙▌  ▐ ▛▌▐ "
+echo "#${GREENON}#####################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING YAY      ######${GREENOFF}"
+echo "#${GREENON}#####################################${GREENOFF}"
 echo ""
 
 # git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -31,9 +42,9 @@ echo ""
 # rm -rf yay
 
 echo ""
-echo "▄▖▖ ▖▄▖▄▖▄▖▄▖▖   ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖"
-echo "▐ ▛▖▌▐ ▐ ▐ ▌▌▌   ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ "
-echo "▟▖▌▝▌▟▖▐ ▟▖▛▌▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌"
+echo "#${GREENON}##############################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING AUR PACKAGES      ######${GREENOFF}"
+echo "#${GREENON}##############################################${GREENOFF}"
 echo ""
 
 sudo pacman -S --needed \
@@ -44,10 +55,11 @@ noto-fonts-emoji \
 cronie \
 qt6-multimedia-ffmpeg
 
+
 echo ""
-echo "▖▖▄ ▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖"
-echo "▙▘▌▌▙▖  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ "
-echo "▌▌▙▘▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌"
+echo "#${GREENON}##############################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING KDE PACKAGES      ######${GREENOFF}"
+echo "#${GREENON}##############################################${GREENOFF}"
 echo ""
 
 sudo pacman -S --needed \
@@ -96,10 +108,11 @@ print-manager \
 sddm-kcm \
 spectacle 
 
+
 echo ""
-echo "▄ ▄▖▄▖▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖"
-echo "▙▘▌▌▚ ▙▖  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ "
-echo "▙▘▛▌▄▌▙▖  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌"
+echo "#${GREENON}###############################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING BASE PACKAGES      ######${GREENOFF}"
+echo "#${GREENON}###############################################${GREENOFF}"
 echo ""
 
 sudo pacman -S --needed \
@@ -178,10 +191,11 @@ yabridgectl \
 yad \
 zsh
 
+
 echo ""
-echo "▄▖▖▖▄▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖"
-echo "▌▌▌▌▙▘  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ "
-echo "▛▌▙▌▌▌  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌"
+echo "#${GREENON}##############################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING AUR PACKAGES      ######${GREENOFF}"
+echo "#${GREENON}##############################################${GREENOFF}"
 echo ""
 
 yay -S --needed \
@@ -195,10 +209,11 @@ upd72020x-fw \
 visual-studio-code-bin \
 wd719x-firmware
 
+
 echo ""
-echo "▄▖▖ ▄▖▄▖▄▖▄▖▖▖  ▄▖▄▖▄▖▖▖▄▖▄▖▄▖▄▖"
-echo "▙▖▌ ▌▌▐ ▙▌▌▌▙▘  ▙▌▌▌▌ ▙▘▌▌▌ ▙▖▚ "
-echo "▌ ▙▖▛▌▐ ▌ ▛▌▌▌  ▌ ▛▌▙▖▌▌▛▌▙▌▙▖▄▌"
+echo "#${GREENON}##################################################${GREENOFF}"
+echo "#${GREENON}#####      INSTALLING FLATPAK PACKAGES      ######${GREENOFF}"
+echo "#${GREENON}##################################################${GREENOFF}"
 echo ""
 
 echo ""
@@ -223,44 +238,33 @@ net.lutris.Lutris \
 com.obsproject.Studio \
 com.core447.StreamController 
 
+
 echo ""
-echo "▄▖▖ ▖▄▖▄ ▖ ▄▖  ▄▖▄ ▄ ▖  ▖"
-echo "▙▖▛▖▌▌▌▙▘▌ ▙▖  ▚ ▌▌▌▌▛▖▞▌"
-echo "▙▖▌▝▌▛▌▙▘▙▖▙▖  ▄▌▙▘▙▘▌▝ ▌"
+echo "#${GREENON}##################################${GREENOFF}"
+echo "#${GREENON}#####      ENABLE SDDM      ######${GREENOFF}"
+echo "#${GREENON}##################################${GREENOFF}"
 echo ""
 
 sudo systemctl enable sddm.service
 
-echo ""
-echo "▄▖▄▖▄▖  ▄▖▖▖▄▖▖ ▖ "
-echo "▚ ▙▖▐   ▚ ▙▌▙▖▌ ▌ "
-echo "▄▌▙▖▐   ▄▌▌▌▙▖▙▖▙▖"
-echo ""
 
 echo ""
-echo "  _____  _______________   __   __   _____  _______  __  _______  __"
-echo "  /  _/ |/ / __/_  __/ _ | / /  / /  /  _/ |/ / ___/  \ \/ / _ \ \/ /"
-echo " _/ //    /\ \  / / / __ |/ /__/ /___/ //    / (_ /    \  / __ |\  / "
-echo "/___/_/|_/___/ /_/ /_/ |_/____/____/___/_/|_/\___/     /_/_/ |_|/_/  "
-echo "                                                                     "
-
+echo "#${GREENON}####################################${GREENOFF}"
+echo "#${GREENON}#####      SETTING SHELL      ######${GREENOFF}"
+echo "#${GREENON}####################################${GREENOFF}"
 echo ""
-echo "######################################"
-echo "######      INSTALLING YAY      ######"
-echo "######################################"
-echo ""
-
 
 chsh -s /usr/bin/zsh
 
+
 echo ""
 echo ""
-echo "███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ "
-echo "██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗"
-echo "█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║"
-echo "██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║"
-echo "██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝"
-echo "╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ "
+echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${YELLOWOFF}"
+echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${YELLOWOFF}"
+echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${YELLOWOFF}"
+echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${YELLOWOFF}"
+echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${YELLOWOFF}"
 echo ""
 echo ""
 
