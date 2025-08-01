@@ -88,8 +88,8 @@ echo "${GREENON}#################################################${GREENOFF}"
 echo ""
 
 echo "Copying GTK Themes..."
-rsync -ahR ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-3.0/gtk.css ${HOME}/.config/gtk-3.0/
-rsync -ahR ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-4.0/gtk.css ${HOME}/.config/gtk-4.0/
+cp -f ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-3.0/gtk.css ${HOME}/.config/gtk-3.0/
+cp -f ${HOME}/.local/share/themes/Colloid-Purple-Dark-Catppuccin/gtk-4.0/gtk.css ${HOME}/.config/gtk-4.0/
 
 echo "Applying Catppucin Folder Theme..."
 papirus-folders -C cat-mocha-mauve --theme Papirus-Dark
