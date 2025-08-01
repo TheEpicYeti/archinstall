@@ -47,7 +47,6 @@ echo "${GREENON}▟▖▌▝▌▟▖▐ ▟▖▛▌▙▖  ▌ ▛▌▙▖▌
 echo ""
 
 sudo pacman -S --needed \
-
 vulkan-radeon \
 lib32-vulkan-radeon \
 noto-fonts \
