@@ -64,6 +64,9 @@ rsync -ahR --info=progress2 $CONFIG/lsd $BACKUP_DIR
 echo "Copying BAT Configs..."
 rsync -ahR --info=progress2 $CONFIG/bat $BACKUP_DIR
 
+echo "Copying YAZI Configs..."
+rsync -ahR --info=progress2 $CONFIG/yazi $BACKUP_DIR
+
 
 echo ""
 echo "${GREENON}#################################${GREENOFF}"

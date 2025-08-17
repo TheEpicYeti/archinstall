@@ -189,6 +189,7 @@ xorg-xwininfo \
 yabridge \
 yabridgectl \
 yad \
+yazi \
 zsh
 
 
