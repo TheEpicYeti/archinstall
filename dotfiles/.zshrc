@@ -6,6 +6,7 @@ eval "$(starship init zsh)"
 ##### REMOVE RIGHT INDENT
 ZLE_RPROMPT_INDENT=0 
 
+
 #################################
 ######     ZSH PLUGINS     ######
 #################################
