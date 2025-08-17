@@ -141,6 +141,14 @@ zshupdate()
   }
 
 
+#############################
+######   GIT ALIASES   ######
+#############################
+
+alias gita="git add ."
+alias gitc="git commit -m $1"
+alias gitp="git push -u origin main"
+
 ################################
 ######   PYTHON ALIASES   ######
 ################################
