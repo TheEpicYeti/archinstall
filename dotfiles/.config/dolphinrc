@@ -1,0 +1,55 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[ContextMenu]
+ShowAddToPlaces=false
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+ShowOpenInNewTab=false
+ShowOpenInSplitView=false
+ShowViewMode=false
+
+[DetailsMode]
+HighlightEntireRow=false
+IconSize=22
+PreviewSize=22
+RightPadding=115
+SidePadding=0
+
+[ExtractDialog]
+2 screens: Height=720
+2 screens: Width=1593
+DirHistory[$e]=$HOME/Downloads/,$HOME/Downloads/NEW/
+
+[General]
+DoubleClickViewAction=none
+OpenNewTabAfterLastTab=true
+RememberOpenedTabs=false
+ShowFullPath=true
+ShowSpaceInfo=false
+ShowZoomSlider=false
+SortingChoice=CaseInsensitiveSorting
+Version=202
+ViewPropsTimestamp=2024,3,27,0,19,45.164
+
+[IconsMode]
+PreviewSize=96
+
+[InformationPanel]
+previewsShown=false
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+2 screens: Height=664
+2 screens: Width=546
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail

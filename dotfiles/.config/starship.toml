@@ -1,0 +1,35 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+
+format = """\
+[◖](#FFFFFF)\
+$time\
+[◗](bg:#EA76CB fg:#FFFFFF)\
+$directory\
+[◗](#EA76CB) \
+"""
+
+[directory]
+style = "bg:#EA76CB fg:#313244"
+format = "[ $path]($style)"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = ".../"
+
+[directory.substitutions]
+"~" = " ~"
+"Desktop" = "  Desktop"
+"Documents" = "󰈙 Documents"
+"Downloads" = " Downloads"
+"Music" = " Music"
+"Pictures" = " Pictures"
+"Games" = "󰊖 Games"
+"Misc" = " Misc"
+"Arch" = "󰣇 Arch"
+"Linux" = " Linux"
+
+[time]
+style = "bg:#FFFFFF fg:#313244"
+format = '[$time]($style)'
+time_format = "%R"
+disabled = false

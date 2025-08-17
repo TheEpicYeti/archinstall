@@ -1,0 +1,17 @@
+ 
+ - Start with minimal install and boot to tty.
+ - Install git
+ - git clone https://github.com/TheEpicYeti/archinstall.git
+ - cd archinstall/
+ - chmod +x archinstall.sh
+ - ./archinstall.sh
+ - Reboot
+
+ - sudo mkdir -p /mnt/Games
+ - sudo mkdir -p /mnt/Backup
+ - sudo cp /etc/fstab /etc/fstab_old
+ - sudo blkid
+ - sudo micro /etc/fstab
+
+UUID=xyz   /mnt/Games    ext4   defaults,nofail    0   0
+UUID=xyz   /mnt/Backup   ext4   defaults,nofail    0   0

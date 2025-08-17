@@ -1,0 +1,77 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[05ba7dc0-ef4a-4776-b8c3-d7b4c79b25be]
+Description=Kitty
+position=0,0
+positionrule=3
+size=1280,1410
+sizerule=3
+wmclass=kitty kitty
+wmclasscomplete=true
+wmclassmatch=1
+
+[24abee48-db42-4cc6-963d-30146d3350c8]
+Description=Transparency Exclusions (Apps)
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=.*(brave|haruna|vlc|gwenview|libreoffice).*
+wmclassmatch=3
+
+[3]
+Description=Discord
+clientmachine=localhost
+position=2560,0
+positionrule=3
+size=1280,1410
+sizerule=3
+title=Friends - Discord
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=discord
+wmclassmatch=1
+
+[4772138b-e580-4d51-8a1f-3edb9d237999]
+Description=Transparency Exclusions (Games)
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=.*\\.exe$|.*steam_app.*
+wmclassmatch=3
+
+[4a3a524b-52b1-458b-9e43-8a7b1711713c]
+Description=Kitty
+noborder=true
+noborderrule=2
+position=0,0
+positionrule=2
+size=1200,1394
+sizerule=2
+wmclass=kitty
+wmclassmatch=1
+
+[General]
+count=5
+rules=4772138b-e580-4d51-8a1f-3edb9d237999,24abee48-db42-4cc6-963d-30146d3350c8,e775a93d-fb22-4b6e-a905-b7949c2642bd,3,05ba7dc0-ef4a-4776-b8c3-d7b4c79b25be
+
+[d5307f97-322b-4131-811c-084e1b56caa0]
+Description=Discord
+clientmachine=localhost
+position=2560,0
+positionrule=3
+size=1280,1396
+sizerule=3
+title=Friends - Discord
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=discord
+wmclassmatch=1
+
+[e775a93d-fb22-4b6e-a905-b7949c2642bd]
+Description=Global Transparency
+opacityactive=85
+opacityactiverule=2
+opacityinactive=85
+opacityinactiverule=2
+wmclass=*

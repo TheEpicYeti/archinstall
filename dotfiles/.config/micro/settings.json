@@ -1,0 +1,8 @@
+{
+    "colorscheme": "catppuccin-mocha-transparent",
+    "autosu": true,
+    "paste": true,
+    "softwrap": true,
+    "wordwrap": true,
+    "xterm": true
+}

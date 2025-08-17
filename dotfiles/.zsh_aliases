@@ -1,0 +1,164 @@
+
+#############################################
+######   GENERAL ALIASES & FUNCTIONS   ######
+#############################################
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+
+alias ls="lsd -a"
+alias ll="lsd -al"
+
+fh() 
+  {
+    local cmd
+    cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
+    if [[ -n "$cmd" ]]; then
+      eval "$cmd"
+    fi
+  }
+
+
+alias sshnas="ssh cain@192.168.50.200"
+alias sshdeck="ssh deck@192.168.50.110" 
+
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"
+
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+
+####################################
+######   FIND & FZF ALIASES   ######
+####################################
+
+# REPLACE find WITH fd
+alias find="fd"
+compdef _fd find
+
+fzff() 
+  {
+    fd --type f | fzf
+  }
+
+fzfd() 
+  { 
+    fd --type d | fzf
+  }
+
+fzfp()
+  {
+    fzf --multi --preview='bat --color=always --style=numbers {}' --preview-window=up:75%
+  }
+
+###################################################
+######   ARCH SPECIFIC ALIASES & FUNCTIONS   ######
+###################################################
+
+alias install="sudo pacman -S"
+compdef _pacman install
+alias remove="sudo pacman -Rns"
+compdef _pacman remove
+
+yayin()
+  {
+    yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=up:50% | xargs -ro yay -S
+  }
+
+alias yayup="sudo pacman -Syu && yay -Syua && flatpak update && flatpak uninstall --unused"
+
+alias removeorphans="pacman -Qtdq | sudo pacman -Rns -"
+alias cleancache="yay -Scc"
+
+
+# SEARCH INSTALLED PACKAGES
+searchin() 
+  {
+    pacman -Qq | fzf --multi --preview 'pacman -Qil {}' --preview-window=up:60% | xargs -ro pacman -Qil | cat
+  }
+
+
+# UPDATE MIRRORS
+update-mirrors() 
+  {
+    sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
+    curl -s "https://archlinux.org/mirrorlist/?country=FR&country=DE&country=GB&protocol=https&ip_version=4&use_mirror_status=on" | \
+      sed -e 's/^#Server/Server/' -e '/^#/d' | \
+      rankmirrors -n 20 - | \
+      sudo tee /etc/pacman.d/mirrorlist
+  }
+
+
+##################################################
+######   ISO MOUNTING ALIASES & FUNCTIONS   ######
+##################################################
+
+# MOUNT ISO SCRIPT (mountiso path/to/iso.iso)
+mountiso() 
+  {
+    if [ "`mount | grep /mnt/iso`" ]; then
+      echo "/mnt/iso is already in use."
+      return
+    fi
+    if [ ! "$1" ]; then
+      echo "Missing iso image argument."
+      return
+    fi
+    if [ ! -f $1 ]; then
+      echo "$1: iso image not found."
+      return
+    fi
+
+    sudo mount -o loop,ro $1 /mnt/iso
+    echo "iso mounted successfully."
+
+    nohup dolphin "/mnt/iso/" > /dev/null 2>&1 &
+    disown
+
+    exit
+  }
+
+# UNMOUNT ISO FROM /mnt/iso
+alias umountiso="sudo umount /mnt/iso"
+
+
+####################################
+######   UPDATE ZSH PLUGINS   ######
+####################################
+
+zshupdate() 
+  {
+    cd $HOME/.zsh-plugins/fzf-tab/
+    echo "Updating fzf-tab..."
+    git pull
+    cd $HOME/.zsh-plugins/zsh-autosuggestions/
+    echo "Updating zsh-autosuggestions..."
+    git pull
+    cd $HOME/.zsh-plugins/zsh-syntax-highlighting/
+    echo "Updating zsh-syntax-highlighting..."
+    git pull
+  }
+
+
+################################
+######   PYTHON ALIASES   ######
+################################
+
+alias pipin="/home/cain/.venv/bin/pip install $1"
+alias pyrun="/home/cain/.venv/bin/python $1"
+
+
+######################################
+######   PROTONTRICKS ALIASES   ######
+######################################
+
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
+
+
+##############################
+######   MISC ALIASES   ######
+##############################
+
+alias windowdetails="qdbus org.kde.KWin /KWin org.kde.KWin.queryWindowInfo"
