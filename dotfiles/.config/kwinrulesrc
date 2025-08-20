@@ -2,42 +2,32 @@
 update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
 
 [05ba7dc0-ef4a-4776-b8c3-d7b4c79b25be]
-Description=Kitty
+Description=Terminals
 position=0,0
 positionrule=3
 size=1280,1410
 sizerule=3
-wmclass=kitty kitty
+types=1
+wmclass=.*kitty.*|.*konsole.*|.*ghostty.*
 wmclasscomplete=true
-wmclassmatch=1
+wmclassmatch=3
 
 [24abee48-db42-4cc6-963d-30146d3350c8]
 Description=Transparency Exclusions (Apps)
 opacityactiverule=2
 opacityinactiverule=2
-wmclass=.*(brave|haruna|vlc|gwenview|libreoffice).*
+wmclass=.*(brave|haruna|vlc|gwenview|libreoffice|stremio).*
 wmclassmatch=3
 
-[3]
-Description=Discord
-clientmachine=localhost
-position=2560,0
+[31d19355-950f-483f-bdf5-51d12a4327d2]
+Description=VS Code
+position=1280,0
 positionrule=3
 size=1280,1410
 sizerule=3
-title=Friends - Discord
 types=1
-windowrole=browser-window
-windowrolematch=1
-wmclass=discord
+wmclass=code
 wmclassmatch=1
-
-[4772138b-e580-4d51-8a1f-3edb9d237999]
-Description=Transparency Exclusions (Games)
-opacityactiverule=2
-opacityinactiverule=2
-wmclass=.*\\.exe$|.*steam_app.*
-wmclassmatch=3
 
 [4a3a524b-52b1-458b-9e43-8a7b1711713c]
 Description=Kitty
@@ -50,9 +40,26 @@ sizerule=2
 wmclass=kitty
 wmclassmatch=1
 
+[4c1d6721-94be-4819-abd3-010171bcfe95]
+Description=Obsidian
+position=1280,0
+positionrule=3
+size=1280,1410
+sizerule=3
+types=1
+wmclass=obsidian
+wmclassmatch=1
+
+[97b7c991-0774-487c-a5c8-27cbc4c40ab6]
+Description=Transparency Exclusions (Games)
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=.*\\.exe$|.*steam_app.*
+wmclassmatch=3
+
 [General]
-count=5
-rules=4772138b-e580-4d51-8a1f-3edb9d237999,24abee48-db42-4cc6-963d-30146d3350c8,e775a93d-fb22-4b6e-a905-b7949c2642bd,3,05ba7dc0-ef4a-4776-b8c3-d7b4c79b25be
+count=7
+rules=97b7c991-0774-487c-a5c8-27cbc4c40ab6,24abee48-db42-4cc6-963d-30146d3350c8,e775a93d-fb22-4b6e-a905-b7949c2642bd,f27e9aa1-550b-4095-b28c-3d278ae71fa2,31d19355-950f-483f-bdf5-51d12a4327d2,4c1d6721-94be-4819-abd3-010171bcfe95,05ba7dc0-ef4a-4776-b8c3-d7b4c79b25be
 
 [d5307f97-322b-4131-811c-084e1b56caa0]
 Description=Discord
@@ -75,3 +82,15 @@ opacityactiverule=2
 opacityinactive=85
 opacityinactiverule=2
 wmclass=*
+
+[f27e9aa1-550b-4095-b28c-3d278ae71fa2]
+Description=Discord
+position=2560,0
+positionrule=3
+size=1280,1410
+sizerule=3
+title=The Idiots - Discord
+types=1
+wmclass=.*Discord.*
+wmclasscomplete=true
+wmclassmatch=3

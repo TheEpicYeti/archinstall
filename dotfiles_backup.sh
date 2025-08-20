@@ -47,6 +47,7 @@ echo ""
 
 echo "Copying ZSH Configs..."
 rsync -ah --info=progress2 ${HOME}/.zshrc $BACKUP_DIR
+rsync -ah --info=progress2 ${HOME}/.zshenv $BACKUP_DIR
 rsync -ah --info=progress2 ${HOME}/.zsh_aliases $BACKUP_DIR
 
 echo "Copying KITTY Configs..."

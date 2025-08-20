@@ -10,14 +10,20 @@ alias mkdir='mkdir -p'
 alias ls="lsd -a"
 alias ll="lsd -al"
 
-fh() 
-  {
-    local cmd
-    cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
-    if [[ -n "$cmd" ]]; then
+fh() {
+  local cmd
+  cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
+  if [[ -n "$cmd" ]]; then
+    echo -e "Execute: \033[1;32m$cmd\033[0m"
+    printf "Run this command? (Y/n): "
+    read -r REPLY
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+      echo "Command cancelled."
+    else
       eval "$cmd"
     fi
-  }
+  fi
+}
 
 
 alias sshnas="ssh cain@192.168.50.200"

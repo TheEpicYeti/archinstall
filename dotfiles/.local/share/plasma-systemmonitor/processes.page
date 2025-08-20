@@ -10,7 +10,7 @@ sortColumn=startTime
 sortDirection=
 sortedColumns=name,usage,memory,netInbound,netOutbound,ioCharactersActuallyReadRate,ioCharactersActuallyWrittenRate,euid,sgid,userUsage,login,canUserLogin,parentPid,totalSysUsage,userTime,pid,ioCharactersActuallyRead,numThreads,totalUsage,ioCharactersRead,totalTime,ioWriteSyscalls,sysTime,tracerpid,status,ioCharactersReadRate,command,niceLevel,vmSize,ioCharactersWritten,vmURSS,ioReadSyscallsRate,ioniceLevel,uid,ioReadSyscalls,suid,ioPriorityClass,username,startTime,tty,totalUserUsage,fsgid,ioCharactersWrittenRate,fsuid,vmShared,gid,egid,sysUsage,scheduler,vmPSS,vmRSS,gpu_usage,gpu_module,gpu_memory,name
 userFilterMode=3
-viewMode=
+viewMode=1
 
 [page]
 Title=Processes
