@@ -5,20 +5,18 @@
 ####################################
 
 YELLOWON=$(tput bold)$(tput setaf 3)
-YELLOWOFF=$(tput sgr0)
-
 GREENON=$(tput bold)$(tput setaf 2)
-GREENOFF=$(tput sgr0)
+COLOUROFF=$(tput sgr0)
 
 
 echo ""
 echo ""
-echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${YELLOWOFF}"
-echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${YELLOWOFF}"
-echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${YELLOWOFF}"
-echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${YELLOWOFF}"
-echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${YELLOWOFF}"
-echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${YELLOWOFF}"
+echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${COLOUROFF}"
+echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${COLOUROFF}"
+echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${COLOUROFF}"
+echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${COLOUROFF}"
+echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${COLOUROFF}"
+echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${COLOUROFF}"
 echo ""
 echo ""
 
@@ -26,9 +24,9 @@ echo ""
 BACKUP_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/dotfiles"
 
 echo ""
-echo "${GREENON}#####################################${GREENOFF}"
-echo "${GREENON}#####      .CONFIG CONFIGS      #####${GREENOFF}"
-echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
+echo "${GREENON}#####      .CONFIG CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
 echo ""
 
 echo "Copying .config Configs..."
@@ -36,9 +34,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.config ${HOME}
 
 
 echo ""
-echo "${GREENON}#####################################${GREENOFF}"
-echo "${GREENON}#####      .LOCAL CONFIGS      #####${GREENOFF}"
-echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
+echo "${GREENON}#####      .LOCAL CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
 echo ""
 
 echo "Copying .local Configs..."
@@ -46,9 +44,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.local ${HOME}
 
 
 echo ""
-echo "${GREENON}##################################${GREENOFF}"
-echo "${GREENON}#####      HOME CONFIGS      #####${GREENOFF}"
-echo "${GREENON}##################################${GREENOFF}"
+echo "${GREENON}##################################${COLOUROFF}"
+echo "${GREENON}#####      HOME CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}##################################${COLOUROFF}"
 echo ""
 
 echo "Copying ZSH Configs..."
@@ -58,9 +56,9 @@ rsync -ah --info=progress2 $BACKUP_DIR/.zsh_aliases ${HOME}
 
 
 echo ""
-echo "${GREENON}#################################${GREENOFF}"
-echo "${GREENON}#####      ZSH CONFIGS      #####${GREENOFF}"
-echo "${GREENON}#################################${GREENOFF}"
+echo "${GREENON}#################################${COLOUROFF}"
+echo "${GREENON}#####      ZSH CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}#################################${COLOUROFF}"
 echo ""
 
 echo "Cloning ZSH PLUGINS..."
@@ -70,9 +68,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.zsh-
 
 
 echo ""
-echo "${GREENON}##################################${GREENOFF}"
-echo "${GREENON}#####      ROOT CONFIGS      #####${GREENOFF}"
-echo "${GREENON}##################################${GREENOFF}"
+echo "${GREENON}##################################${COLOUROFF}"
+echo "${GREENON}#####      ROOT CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}##################################${COLOUROFF}"
 echo ""
 
 echo "Copying PACMAN Config..."
@@ -86,9 +84,9 @@ sudo rsync -hr --info=progress2 $BACKUP_DIR/sddm/catppuccin-mocha-mauve /usr/sha
 
 
 echo ""
-echo "${GREENON}#################################################${GREENOFF}"
-echo "${GREENON}#####      FLATPAK PERMS & GTK CONFIGS      #####${GREENOFF}"
-echo "${GREENON}#################################################${GREENOFF}"
+echo "${GREENON}#################################################${COLOUROFF}"
+echo "${GREENON}#####      FLATPAK PERMS & GTK CONFIGS      #####${COLOUROFF}"
+echo "${GREENON}#################################################${COLOUROFF}"
 echo ""
 
 echo "Copying GTK Themes..."
@@ -109,9 +107,9 @@ flatpak --user override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
 
 
 echo ""
-echo "${GREENON}#####################################${GREENOFF}"
-echo "${GREENON}#####      ENABLE SERVICES      #####${GREENOFF}"
-echo "${GREENON}#####################################${GREENOFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
+echo "${GREENON}#####      ENABLE SERVICES      #####${COLOUROFF}"
+echo "${GREENON}#####################################${COLOUROFF}"
 echo ""
 
 echo "Enabling CRON Service..."
@@ -132,12 +130,12 @@ sudo systemctl enable --now syncthing@cain.service
 
 echo ""
 echo ""
-echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${YELLOWOFF}"
-echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${YELLOWOFF}"
-echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${YELLOWOFF}"
-echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${YELLOWOFF}"
-echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${YELLOWOFF}"
-echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${YELLOWOFF}"
+echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${COLOUROFF}"
+echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${COLOUROFF}"
+echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${COLOUROFF}"
+echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${COLOUROFF}"
+echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${COLOUROFF}"
+echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${COLOUROFF}"
 echo ""
 echo ""
 
