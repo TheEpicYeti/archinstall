@@ -13,8 +13,14 @@ else
 #####     COLOUR VARIABLES     #####
 ####################################
 
-YELLOWON=$(tput bold)$(tput setaf 3)
+BLACKON=$(tput bold)$(tput setaf 0)
+REDON=$(tput bold)$(tput setaf 1)
 GREENON=$(tput bold)$(tput setaf 2)
+YELLOWON=$(tput bold)$(tput setaf 3)
+BLUEON=$(tput bold)$(tput setaf 4)
+MAGENTAON=$(tput bold)$(tput setaf 5)
+CYANON=$(tput bold)$(tput setaf 6)
+WHITEON=$(tput bold)$(tput setaf 7)
 COLOUROFF=$(tput sgr0)
 
 

@@ -1,3 +1,17 @@
+#########################
+######   COLOURS   ######
+#########################
+
+BLACKON=$(tput bold)$(tput setaf 0)
+REDON=$(tput bold)$(tput setaf 1)
+GREENON=$(tput bold)$(tput setaf 2)
+YELLOWON=$(tput bold)$(tput setaf 3)
+BLUEON=$(tput bold)$(tput setaf 4)
+MAGENTAON=$(tput bold)$(tput setaf 5)
+CYANON=$(tput bold)$(tput setaf 6)
+WHITEON=$(tput bold)$(tput setaf 7)
+COLOUROFF=$(tput sgr0)
+
 
 #############################################
 ######   GENERAL ALIASES & FUNCTIONS   ######
@@ -14,12 +28,13 @@ fh() {
   local cmd
   cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
   if [[ -n "$cmd" ]]; then
-    echo -e "Execute: \033[1;32m$cmd\033[0m"
+    echo -e "Execute: ${GREENON}$cmd${COLOUROFF}"
     printf "Run this command? (Y/n): "
     read -r REPLY
     if [[ $REPLY =~ ^[Nn]$ ]]; then
-      echo "Command cancelled."
+      echo "${REDON}Command cancelled.${COLOUROFF}"
     else
+      echo "Executing ${GREENON}$cmd${COLOUROFF}"
       eval "$cmd"
     fi
   fi
@@ -88,7 +103,9 @@ searchin()
 # UPDATE MIRRORS
 update-mirrors() 
   {
-    sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
+    echo "${YELLOWON}Backing up /etc/pacman.d/mirrorlist to /etc/pacman.d/mirrorlist-backup${COLOUROFF}"
+    sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
+    echo "${YELLOWON}Ranking mirrors in progress...${COLOUROFF}"
     curl -s "https://archlinux.org/mirrorlist/?country=FR&country=DE&country=GB&protocol=https&ip_version=4&use_mirror_status=on" | \
       sed -e 's/^#Server/Server/' -e '/^#/d' | \
       rankmirrors -n 20 - | \
@@ -104,24 +121,23 @@ update-mirrors()
 mountiso() 
   {
     if [ "`mount | grep /mnt/iso`" ]; then
-      echo "/mnt/iso is already in use."
+      echo "${REDON}/mnt/iso is already in use.${COLOUROFF}"
       return
     fi
     if [ ! "$1" ]; then
-      echo "Missing iso image argument."
+      echo "${REDON}Missing iso image argument.${COLOUROFF}"
       return
     fi
     if [ ! -f $1 ]; then
-      echo "$1: iso image not found."
+      echo "${REDON}$1: iso image not found.${COLOUROFF}"
       return
     fi
 
     sudo mount -o loop,ro $1 /mnt/iso
-    echo "iso mounted successfully."
+    echo "${GREENON}iso mounted successfully.${COLOUROFF}"
 
     nohup dolphin "/mnt/iso/" > /dev/null 2>&1 &
     disown
-
     exit
   }
 
@@ -136,13 +152,13 @@ alias umountiso="sudo umount /mnt/iso"
 zshupdate() 
   {
     cd $HOME/.zsh-plugins/fzf-tab/
-    echo "Updating fzf-tab..."
+    echo "${YELLOWON}Updating fzf-tab...${COLOUROFF}"
     git pull
     cd $HOME/.zsh-plugins/zsh-autosuggestions/
-    echo "Updating zsh-autosuggestions..."
+    echo "${YELLOWON}Updating zsh-autosuggestions...${COLOUROFF}"
     git pull
     cd $HOME/.zsh-plugins/zsh-syntax-highlighting/
-    echo "Updating zsh-syntax-highlighting..."
+    echo "${YELLOWON}Updating zsh-syntax-highlighting...${COLOUROFF}"
     git pull
   }
 
