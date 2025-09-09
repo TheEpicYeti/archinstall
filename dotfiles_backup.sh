@@ -13,25 +13,25 @@ else
 #####     COLOUR VARIABLES     #####
 ####################################
 
-BLACKON=$(tput bold)$(tput setaf 0)
-REDON=$(tput bold)$(tput setaf 1)
-GREENON=$(tput bold)$(tput setaf 2)
-YELLOWON=$(tput bold)$(tput setaf 3)
-BLUEON=$(tput bold)$(tput setaf 4)
-MAGENTAON=$(tput bold)$(tput setaf 5)
-CYANON=$(tput bold)$(tput setaf 6)
-WHITEON=$(tput bold)$(tput setaf 7)
-COLOUROFF=$(tput sgr0)
+BLACK=$(tput bold)$(tput setaf 0)
+RED=$(tput bold)$(tput setaf 1)
+GREEN=$(tput bold)$(tput setaf 2)
+YELLOW=$(tput bold)$(tput setaf 3)
+BLUE=$(tput bold)$(tput setaf 4)
+MAGENTA=$(tput bold)$(tput setaf 5)
+CYAN=$(tput bold)$(tput setaf 6)
+WHITE=$(tput bold)$(tput setaf 7)
+RC=$(tput sgr0)
 
 
 echo ""
 echo ""
-echo "${YELLOWON}██████╗  █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗     ██╗   ██╗██████╗ ${COLOUROFF}"
-echo "${YELLOWON}██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝     ██║   ██║██╔══██╗${COLOUROFF}"
-echo "${YELLOWON}██████╔╝███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗    ██║   ██║██████╔╝${COLOUROFF}"
-echo "${YELLOWON}██╔══██╗██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║    ██║   ██║██╔═══╝ ${COLOUROFF}"
-echo "${YELLOWON}██████╔╝██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝    ╚██████╔╝██║     ${COLOUROFF}"
-echo "${YELLOWON}╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═╝     ${COLOUROFF}"
+echo "${YELLOWON}██████╗  █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗     ██╗   ██╗██████╗ ${RC}"
+echo "${YELLOWON}██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝     ██║   ██║██╔══██╗${RC}"
+echo "${YELLOWON}██████╔╝███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗    ██║   ██║██████╔╝${RC}"
+echo "${YELLOWON}██╔══██╗██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║    ██║   ██║██╔═══╝ ${RC}"
+echo "${YELLOWON}██████╔╝██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝    ╚██████╔╝██║     ${RC}"
+echo "${YELLOWON}╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═╝     ${RC}"
 echo ""
 echo ""
 
@@ -44,9 +44,9 @@ mkdir -p "$BACKUP_DIR"
 
 
 echo ""
-echo "${GREENON}############################################${COLOUROFF}"
-echo "${GREENON}#####      ZSH & TERMINAL CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}############################################${COLOUROFF}"
+echo "${GREEN}############################################${RC}"
+echo "${GREEN}#####      ZSH & TERMINAL CONFIGS      #####${RC}"
+echo "${GREEN}############################################${RC}"
 echo ""
 
 echo "Copying ZSH Configs..."
@@ -74,9 +74,9 @@ rsync -ahR --info=progress2 $CONFIG/yazi $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}#################################${COLOUROFF}"
-echo "${GREENON}#####      KDE CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}#################################${COLOUROFF}"
+echo "${GREEN}#################################${RC}"
+echo "${GREEN}#####      KDE CONFIGS      #####${RC}"
+echo "${GREEN}#################################${RC}"
 echo ""
 
 echo "Copying KDE Configs..."
@@ -90,9 +90,9 @@ rsync -ahR --info=progress2 $CONFIG/krunnerrc $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}######################################${COLOUROFF}"
-echo "${GREENON}#####      KDENLIVE CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}######################################${COLOUROFF}"
+echo "${GREEN}######################################${RC}"
+echo "${GREEN}#####      KDENLIVE CONFIGS      #####${RC}"
+echo "${GREEN}######################################${RC}"
 echo ""
 
 echo "Copying KDENLIVE Configs..."
@@ -101,9 +101,9 @@ rsync -ahR --info=progress2 $CONFIG/kdenliverc $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}###################################${COLOUROFF}"
-echo "${GREENON}#####      THEME CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}###################################${COLOUROFF}"
+echo "${GREEN}###################################${RC}"
+echo "${GREEN}#####      THEME CONFIGS      #####${RC}"
+echo "${GREEN}###################################${RC}"
 echo ""
 
 echo "Copying GTK Themes..."
@@ -120,9 +120,9 @@ rsync -ahR --info=progress2 $LOCAL/aurorae $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}##################################${COLOUROFF}"
-echo "${GREENON}#####      MISC CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}##################################${COLOUROFF}"
+echo "${GREEN}##################################${RC}"
+echo "${GREEN}#####      MISC CONFIGS      #####${RC}"
+echo "${GREEN}##################################${RC}"
 echo ""
 
 echo "Copying MANGOHUD Config..."
@@ -143,9 +143,9 @@ rsync -ahR --info=progress2 $CONFIG/btop $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}###################################${COLOUROFF}"
-echo "${GREENON}#####      FONTS & ICONS      #####${COLOUROFF}"
-echo "${GREENON}###################################${COLOUROFF}"
+echo "${GREEN}###################################${RC}"
+echo "${GREEN}#####      FONTS & ICONS      #####${RC}"
+echo "${GREEN}###################################${RC}"
 echo ""
 
 echo "Copying FONTS..."
@@ -155,9 +155,9 @@ rsync -ahR --info=progress2 $LOCAL/icons $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}###################################${COLOUROFF}"
-echo "${GREENON}#####      AUDIO CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}###################################${COLOUROFF}"
+echo "${GREEN}###################################${RC}"
+echo "${GREEN}#####      AUDIO CONFIGS      #####${RC}"
+echo "${GREEN}###################################${RC}"
 echo ""
 
 echo "Copying PIPEWIRE Configs..."
@@ -169,18 +169,18 @@ rsync -ahR --info=progress2 $CONFIG/wireplumber $BACKUP_DIR
 
 echo ""
 echo ""
-echo "${YELLOWON} ▗▄▄▖▗▖  ▗▖▗▄▄▖▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖    ▗▄▄▄▖▗▄▄▄▖▗▖   ▗▄▄▄▖ ▗▄▄▖${COLOUROFF}"
-echo "${YELLOWON}▐▌    ▝▚▞▘▐▌     █  ▐▌   ▐▛▚▞▜▌    ▐▌     █  ▐▌   ▐▌   ▐▌   ${COLOUROFF}"
-echo "${YELLOWON} ▝▀▚▖  ▐▌  ▝▀▚▖  █  ▐▛▀▀▘▐▌  ▐▌    ▐▛▀▀▘  █  ▐▌   ▐▛▀▀▘ ▝▀▚▖${COLOUROFF}"
-echo "${YELLOWON}▗▄▄▞▘  ▐▌ ▗▄▄▞▘  █  ▐▙▄▄▖▐▌  ▐▌    ▐▌   ▗▄█▄▖▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘${COLOUROFF}"
+echo "${YELLOWON} ▗▄▄▖▗▖  ▗▖▗▄▄▖▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖    ▗▄▄▄▖▗▄▄▄▖▗▖   ▗▄▄▄▖ ▗▄▄▖${RC}"
+echo "${YELLOWON}▐▌    ▝▚▞▘▐▌     █  ▐▌   ▐▛▚▞▜▌    ▐▌     █  ▐▌   ▐▌   ▐▌   ${RC}"
+echo "${YELLOWON} ▝▀▚▖  ▐▌  ▝▀▚▖  █  ▐▛▀▀▘▐▌  ▐▌    ▐▛▀▀▘  █  ▐▌   ▐▛▀▀▘ ▝▀▚▖${RC}"
+echo "${YELLOWON}▗▄▄▞▘  ▐▌ ▗▄▄▞▘  █  ▐▙▄▄▖▐▌  ▐▌    ▐▌   ▗▄█▄▖▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘${RC}"
 echo ""
 echo ""
 
 
 echo ""
-echo "${GREENON}##################################${COLOUROFF}"
-echo "${GREENON}#####      ARCH CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}##################################${COLOUROFF}"
+echo "${GREEN}##################################${RC}"
+echo "${GREEN}#####      ARCH CONFIGS      #####${RC}"
+echo "${GREEN}##################################${RC}"
 echo ""
 
 echo "Copying PACMAN Config..."
@@ -188,9 +188,9 @@ sudo rsync -ah --info=progress2 /etc/pacman.conf $BACKUP_DIR
 
 
 echo ""
-echo "${GREENON}####################################${COLOUROFF}"
-echo "${GREENON}#####      SYSTEM CONFIGS      #####${COLOUROFF}"
-echo "${GREENON}####################################${COLOUROFF}"
+echo "${GREEN}####################################${RC}"
+echo "${GREEN}#####      SYSTEM CONFIGS      #####${RC}"
+echo "${GREEN}####################################${RC}"
 echo ""
 
 echo "Copying SYSCTL Config..."
@@ -200,12 +200,12 @@ sudo rsync -ah --info=progress2 /etc/sysctl.d/99-sysctl.conf $BACKUP_DIR
 
 echo ""
 echo ""
-echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${COLOUROFF}"
-echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${COLOUROFF}"
-echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${COLOUROFF}"
-echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${COLOUROFF}"
-echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${COLOUROFF}"
-echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${COLOUROFF}"
+echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${RC}"
+echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${RC}"
+echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${RC}"
+echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${RC}"
+echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${RC}"
+echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${RC}"
 echo ""
 echo ""
 

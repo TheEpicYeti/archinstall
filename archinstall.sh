@@ -4,41 +4,41 @@
 #####     COLOUR VARIABLES     #####
 ####################################
 
-BLACKON=$(tput bold)$(tput setaf 0)
-REDON=$(tput bold)$(tput setaf 1)
-GREENON=$(tput bold)$(tput setaf 2)
-YELLOWON=$(tput bold)$(tput setaf 3)
-BLUEON=$(tput bold)$(tput setaf 4)
-MAGENTAON=$(tput bold)$(tput setaf 5)
-CYANON=$(tput bold)$(tput setaf 6)
-WHITEON=$(tput bold)$(tput setaf 7)
-COLOUROFF=$(tput sgr0)
+BLACK=$(tput bold)$(tput setaf 0)
+RED=$(tput bold)$(tput setaf 1)
+GREEN=$(tput bold)$(tput setaf 2)
+YELLOW=$(tput bold)$(tput setaf 3)
+BLUE=$(tput bold)$(tput setaf 4)
+MAGENTA=$(tput bold)$(tput setaf 5)
+CYAN=$(tput bold)$(tput setaf 6)
+WHITE=$(tput bold)$(tput setaf 7)
+RC=$(tput sgr0)
 
 
 echo ""
 echo ""
-echo "${YELLOWON}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${COLOUROFF}"
-echo "${YELLOWON}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${COLOUROFF}"
-echo "${YELLOWON}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${COLOUROFF}"
-echo "${YELLOWON}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${COLOUROFF}"
-echo "${YELLOWON}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${COLOUROFF}"
-echo "${YELLOWON}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${COLOUROFF}"
+echo "${YELLOW}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${RC}"
+echo "${YELLOW}██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██║████╗  ██║██╔════╝ ${RC}"
+echo "${YELLOW}██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     ██║██╔██╗ ██║██║  ███╗${RC}"
+echo "${YELLOW}██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██║██║╚██╗██║██║   ██║${RC}"
+echo "${YELLOW}██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗██║██║ ╚████║╚██████╔╝${RC}"
+echo "${YELLOW}╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ${RC}"
 echo ""
 echo ""
 
 echo ""
-echo "#${GREENON}#####################################${COLOUROFF}"
-echo "#${GREENON}#####      INITIAL UPDATE      ######${COLOUROFF}"
-echo "#${GREENON}#####################################${COLOUROFF}"
+echo "#${GREEN}#####################################${RC}"
+echo "#${GREEN}#####      INITIAL UPDATE      ######${RC}"
+echo "#${GREEN}#####################################${RC}"
 echo ""
 
 sudo -v 
 sudo pacman -Syu
 
 echo ""
-echo "#${GREENON}#####################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING YAY      ######${COLOUROFF}"
-echo "#${GREENON}#####################################${COLOUROFF}"
+echo "#${GREEN}#####################################${RC}"
+echo "#${GREEN}#####      INSTALLING YAY      ######${RC}"
+echo "#${GREEN}#####################################${RC}"
 echo ""
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -46,9 +46,9 @@ cd ..
 rm -rf yay
 
 echo ""
-echo "#${GREENON}##############################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING AUR PACKAGES      ######${COLOUROFF}"
-echo "#${GREENON}##############################################${COLOUROFF}"
+echo "#${GREEN}##############################################${RC}"
+echo "#${GREEN}#####      INSTALLING AUR PACKAGES      ######${RC}"
+echo "#${GREEN}##############################################${RC}"
 echo ""
 
 sudo pacman -S --needed \
@@ -61,9 +61,9 @@ qt6-multimedia-ffmpeg
 
 
 echo ""
-echo "#${GREENON}##############################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING KDE PACKAGES      ######${COLOUROFF}"
-echo "#${GREENON}##############################################${COLOUROFF}"
+echo "#${GREEN}##############################################${RC}"
+echo "#${GREEN}#####      INSTALLING KDE PACKAGES      ######${RC}"
+echo "#${GREEN}##############################################${RC}"
 echo ""
 
 sudo pacman -S --needed \
@@ -114,9 +114,9 @@ spectacle
 
 
 echo ""
-echo "#${GREENON}###############################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING BASE PACKAGES      ######${COLOUROFF}"
-echo "#${GREENON}###############################################${COLOUROFF}"
+echo "#${GREEN}###############################################${RC}"
+echo "#${GREEN}#####      INSTALLING BASE PACKAGES      ######${RC}"
+echo "#${GREEN}###############################################${RC}"
 echo ""
 
 sudo pacman -S --needed \
@@ -200,9 +200,9 @@ zsh
 
 
 echo ""
-echo "#${GREENON}##############################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING AUR PACKAGES      ######${COLOUROFF}"
-echo "#${GREENON}##############################################${COLOUROFF}"
+echo "#${GREEN}##############################################${RC}"
+echo "#${GREEN}#####      INSTALLING AUR PACKAGES      ######${RC}"
+echo "#${GREEN}##############################################${RC}"
 echo ""
 
 yay -S --needed \
@@ -219,9 +219,9 @@ kwin-effects-forceblur
 
 
 echo ""
-echo "#${GREENON}##################################################${COLOUROFF}"
-echo "#${GREENON}#####      INSTALLING FLATPAK PACKAGES      ######${COLOUROFF}"
-echo "#${GREENON}##################################################${COLOUROFF}"
+echo "#${GREEN}##################################################${RC}"
+echo "#${GREEN}#####      INSTALLING FLATPAK PACKAGES      ######${RC}"
+echo "#${GREEN}##################################################${RC}"
 echo ""
 
 # FLATPAK PACKAGES
@@ -238,18 +238,18 @@ com.core447.StreamController
 
 
 echo ""
-echo "#${GREENON}##################################${COLOUROFF}"
-echo "#${GREENON}#####      ENABLE SDDM      ######${COLOUROFF}"
-echo "#${GREENON}##################################${COLOUROFF}"
+echo "#${GREEN}##################################${RC}"
+echo "#${GREEN}#####      ENABLE SDDM      ######${RC}"
+echo "#${GREEN}##################################${RC}"
 echo ""
 
 sudo systemctl enable sddm.service
 
 
 echo ""
-echo "#${GREENON}####################################${COLOUROFF}"
-echo "#${GREENON}#####      SETTING SHELL      ######${COLOUROFF}"
-echo "#${GREENON}####################################${COLOUROFF}"
+echo "#${GREEN}####################################${RC}"
+echo "#${GREEN}#####      SETTING SHELL      ######${RC}"
+echo "#${GREEN}####################################${RC}"
 echo ""
 
 chsh -s /usr/bin/zsh
@@ -257,12 +257,12 @@ chsh -s /usr/bin/zsh
 
 echo ""
 echo ""
-echo "${YELLOWON}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${COLOUROFF}"
-echo "${YELLOWON}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${COLOUROFF}"
-echo "${YELLOWON}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${COLOUROFF}"
-echo "${YELLOWON}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${COLOUROFF}"
-echo "${YELLOWON}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${COLOUROFF}"
-echo "${YELLOWON}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${COLOUROFF}"
+echo "${YELLOW}███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██████╗ ${RC}"
+echo "${YELLOW}██╔════╝██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██╔══██╗${RC}"
+echo "${YELLOW}█████╗  ██║██╔██╗ ██║██║███████╗███████║█████╗  ██║  ██║${RC}"
+echo "${YELLOW}██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║  ██║${RC}"
+echo "${YELLOW}██║     ██║██║ ╚████║██║███████║██║  ██║███████╗██████╔╝${RC}"
+echo "${YELLOW}╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝ ${RC}"
 echo ""
 echo ""
 

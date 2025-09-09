@@ -2,15 +2,15 @@
 ######   COLOURS   ######
 #########################
 
-BLACKON=$(tput bold)$(tput setaf 0)
-REDON=$(tput bold)$(tput setaf 1)
-GREENON=$(tput bold)$(tput setaf 2)
-YELLOWON=$(tput bold)$(tput setaf 3)
-BLUEON=$(tput bold)$(tput setaf 4)
-MAGENTAON=$(tput bold)$(tput setaf 5)
-CYANON=$(tput bold)$(tput setaf 6)
-WHITEON=$(tput bold)$(tput setaf 7)
-COLOUROFF=$(tput sgr0)
+BLACK=$(tput bold)$(tput setaf 0)
+RED=$(tput bold)$(tput setaf 1)
+GREEN=$(tput bold)$(tput setaf 2)
+YELLOW=$(tput bold)$(tput setaf 3)
+BLUE=$(tput bold)$(tput setaf 4)
+MAGENTA=$(tput bold)$(tput setaf 5)
+CYAN=$(tput bold)$(tput setaf 6)
+WHITE=$(tput bold)$(tput setaf 7)
+RC=$(tput sgr0)
 
 
 #############################################
@@ -31,13 +31,13 @@ fh() {
   local cmd
   cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
   if [[ -n "$cmd" ]]; then
-    echo -e "Execute: ${GREENON}$cmd${COLOUROFF}"
+    echo -e "Execute: ${GREEN}$cmd${RC}"
     printf "Run this command? (Y/n): "
     read -r REPLY
     if [[ $REPLY =~ ^[Nn]$ ]]; then
-      echo "${REDON}Command cancelled.${COLOUROFF}"
+      echo "${RED}Command cancelled.${RC}"
     else
-      echo "Executing ${GREENON}$cmd${COLOUROFF}"
+      echo "Executing ${GREEN}$cmd${RC}"
       eval "$cmd"
     fi
   fi
@@ -107,9 +107,9 @@ searchin()
 # UPDATE MIRRORS
 update-mirrors() 
   {
-    echo "${YELLOWON}Backing up /etc/pacman.d/mirrorlist to /etc/pacman.d/mirrorlist-backup${COLOUROFF}"
+    echo "${YELLOW}Backing up /etc/pacman.d/mirrorlist to /etc/pacman.d/mirrorlist-backup${RC}"
     sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
-    echo "${YELLOWON}Ranking mirrors in progress...${COLOUROFF}"
+    echo "${YELLOW}Ranking mirrors in progress...${RC}"
     curl -s "https://archlinux.org/mirrorlist/?country=FR&country=DE&country=GB&protocol=https&ip_version=4&use_mirror_status=on" | \
       sed -e 's/^#Server/Server/' -e '/^#/d' | \
       rankmirrors -n 20 - | \
@@ -125,20 +125,20 @@ update-mirrors()
 mountiso() 
   {
     if [ "`mount | grep /mnt/iso`" ]; then
-      echo "${REDON}/mnt/iso is already in use.${COLOUROFF}"
+      echo "${RED}/mnt/iso is already in use.${RC}"
       return
     fi
     if [ ! "$1" ]; then
-      echo "${REDON}Missing iso image argument.${COLOUROFF}"
+      echo "${RED}Missing iso image argument.${RC}"
       return
     fi
     if [ ! -f $1 ]; then
-      echo "${REDON}$1: iso image not found.${COLOUROFF}"
+      echo "${RED}$1: iso image not found.${RC}"
       return
     fi
 
     sudo mount -o loop,ro $1 /mnt/iso
-    echo "${GREENON}iso mounted successfully.${COLOUROFF}"
+    echo "${GREEN}iso mounted successfully.${RC}"
 
     nohup dolphin "/mnt/iso/" > /dev/null 2>&1 &
     disown
@@ -156,13 +156,13 @@ alias umountiso="sudo umount /mnt/iso"
 zshupdate() 
   {
     cd $HOME/.zsh-plugins/fzf-tab/
-    echo "${YELLOWON}Updating fzf-tab...${COLOUROFF}"
+    echo "${YELLOW}Updating fzf-tab...${RC}"
     git pull
     cd $HOME/.zsh-plugins/zsh-autosuggestions/
-    echo "${YELLOWON}Updating zsh-autosuggestions...${COLOUROFF}"
+    echo "${YELLOW}Updating zsh-autosuggestions...${RC}"
     git pull
     cd $HOME/.zsh-plugins/zsh-syntax-highlighting/
-    echo "${YELLOWON}Updating zsh-syntax-highlighting...${COLOUROFF}"
+    echo "${YELLOW}Updating zsh-syntax-highlighting...${RC}"
     git pull
   }
 
