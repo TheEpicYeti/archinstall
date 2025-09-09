@@ -175,7 +175,8 @@ starship \
 steam \
 syncthing \
 tealdeer \
-thefuck \
+trash-cli \
+tree \
 ttf-roboto \
 ufw \
 umu-launcher \
@@ -221,16 +222,6 @@ echo ""
 echo "#${GREENON}##################################################${COLOUROFF}"
 echo "#${GREENON}#####      INSTALLING FLATPAK PACKAGES      ######${COLOUROFF}"
 echo "#${GREENON}##################################################${COLOUROFF}"
-echo ""
-
-echo ""
-echo "ADDING FLATHUB REPO!"
-echo ""
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-echo ""
-echo "DONE"
 echo ""
 
 # FLATPAK PACKAGES

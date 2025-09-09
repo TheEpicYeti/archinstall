@@ -17,12 +17,15 @@ COLOUROFF=$(tput sgr0)
 ######   GENERAL ALIASES & FUNCTIONS   ######
 #############################################
 
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
+alias cp="cp -i"
+alias mv="mv -i"
+alias mkdir="mkdir -p"
+
+alias rm="trash -v"
 
 alias ls="lsd -a"
 alias ll="lsd -al"
+alias tree="tree -CAhF --dirsfirst"
 
 fh() {
   local cmd
@@ -40,9 +43,10 @@ fh() {
   fi
 }
 
-
-alias sshnas="ssh cain@192.168.50.200"
-alias sshdeck="ssh deck@192.168.50.110" 
+alias sshrouter="ssh root@192.168.8.1"
+alias sshswitch="ssh root@192.168.8.100"
+alias sshnas="ssh cain@192.168.8.200"
+alias sshdeck="ssh deck@192.168.8.110"
 
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
@@ -183,8 +187,8 @@ alias pyrun="/home/cain/.venv/bin/python $1"
 ######   PROTONTRICKS ALIASES   ######
 ######################################
 
-alias protontricks='flatpak run com.github.Matoking.protontricks'
-alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
+alias protontricks="flatpak run com.github.Matoking.protontricks"
+alias protontricks-launch="flatpak run --command=protontricks-launch com.github.Matoking.protontricks"
 
 
 ##############################

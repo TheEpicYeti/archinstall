@@ -16,7 +16,7 @@ wmclassmatch=3
 Description=Transparency Exclusions (Apps)
 opacityactiverule=2
 opacityinactiverule=2
-wmclass=.*(brave|haruna|vlc|gwenview|libreoffice|stremio).*
+wmclass=.*(brave|haruna|vlc|gwenview|libreoffice|stremio|spectacle).*
 wmclassmatch=3
 
 [31d19355-950f-483f-bdf5-51d12a4327d2]
