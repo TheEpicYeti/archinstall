@@ -1,6 +1,6 @@
 [General]
 height=826
 hiddenPages=history.page
-lastVisitedPage=applications.page
+lastVisitedPage=processes.page
 pageOrder=overview.page,applications.page,processes.page,history.page
 width=1340

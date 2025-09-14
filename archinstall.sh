@@ -15,6 +15,18 @@ WHITE=$(tput bold)$(tput setaf 7)
 RC=$(tput sgr0)
 
 
+#################################
+#####     CHECK IF ROOT     #####
+#################################
+
+if [ "$EUID" -eq 0 ]; then
+    echo "${RED}This script should not be run as root.${RC}"
+    echo "${RED}Run it as a regular user instead.${RC}"
+    read -p "Press Enter to exit..."
+    exit 1
+fi
+
+
 echo ""
 echo ""
 echo "${YELLOW}██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ██╗███╗   ██╗ ██████╗ ${RC}"
