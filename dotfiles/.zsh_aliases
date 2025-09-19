@@ -92,7 +92,7 @@ yayin()
     yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=up:50% | xargs -ro yay -S
   }
 
-alias yayup="sudo pacman -Syu && yay -Syua && flatpak update && flatpak uninstall --unused"
+alias yayup="yay -Syua && flatpak update && flatpak uninstall --unused"
 
 alias removeorphans="pacman -Qtdq | sudo pacman -Rns -"
 alias cleancache="yay -Scc"
