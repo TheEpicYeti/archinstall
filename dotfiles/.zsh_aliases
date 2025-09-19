@@ -27,6 +27,8 @@ alias ls="lsd -a"
 alias ll="lsd -al"
 alias tree="tree -CAhF --dirsfirst"
 
+alias reboot="shutdown -r now"
+
 fh() {
   local cmd
   cmd=$(history 1 | fzf --tac --preview-window=up:75% | sed 's/^[ ]*[0-9]*[ ]*//')
@@ -41,6 +43,10 @@ fh() {
       eval "$cmd"
     fi
   fi
+}
+
+jlog() {
+  journalctl -b -1 --reverse "$@" | fzf --no-sort
 }
 
 alias sshrouter="ssh root@192.168.8.1"
@@ -62,14 +68,9 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias find="fd"
 compdef _fd find
 
-fzff() 
-  {
-    fd --type f | fzf
-  }
-
 fzfd() 
   { 
-    fd --type d | fzf
+    fd --type d --hidden | fzf
   }
 
 fzfp()
